@@ -25,6 +25,7 @@ Route::post('/register', [AuthController::class, 'register'])->name('register.po
 // Route untuk diagnosis (publik)
 Route::get('/diagnosis', [DiagnosisController::class, 'index'])->name('diagnosis.index');
 Route::post('/diagnosis/proses', [DiagnosisController::class, 'proses'])->name('diagnosis.proses');
+Route::get('/informasi-sistem', [DiagnosisController::class, 'informasiSistem'])->name('informasi.sistem');
 
 // Route untuk admin (perlu autentikasi)
 Route::middleware(['admin'])->group(function () {

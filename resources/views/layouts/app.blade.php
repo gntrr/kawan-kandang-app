@@ -605,6 +605,11 @@
                                     </a>
                                 </li>
                                 <li class="nav-item me-3">
+                                    <a class="nav-link {{ request()->routeIs('informasi.sistem') ? 'active' : '' }}" href="{{ route('informasi.sistem') }}">
+                                        <i class="fas fa-info-circle me-1"></i> Informasi Sistem
+                                    </a>
+                                </li>
+                                <li class="nav-item me-3">
                                     <a class="nav-link" href="{{ route('login') }}">
                                         <i class="fas fa-sign-in-alt me-1"></i> Login
                                     </a>
@@ -613,6 +618,11 @@
                                 <li class="nav-item me-3">
                                     <a class="nav-link {{ request()->routeIs('diagnosis.index') ? 'active' : '' }}" href="{{ route('diagnosis.index') }}">
                                         <i class="fas fa-stethoscope me-1"></i> Diagnosis
+                                    </a>
+                                </li>
+                                <li class="nav-item me-3">
+                                    <a class="nav-link {{ request()->routeIs('informasi.sistem') ? 'active' : '' }}" href="{{ route('informasi.sistem') }}">
+                                        <i class="fas fa-info-circle me-1"></i> Informasi Sistem
                                     </a>
                                 </li>
                                 @endguest

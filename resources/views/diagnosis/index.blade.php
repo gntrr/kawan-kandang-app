@@ -64,37 +64,16 @@
     </div>
     
     <div class="card shadow mt-4">
-        <div class="card-header">
-            <h4 class="mb-0"><i class="fas fa-question-circle me-2"></i>Informasi Sistem</h4>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="info-card text-center p-4 rounded-4 shadow-sm" style="background: linear-gradient(120deg, #e6f6ff, #d9f1ff);">
-                        <div class="info-icon mb-3 mx-auto">
-                            <i class="fas fa-database fa-3x" style="color: #0091ff;"></i>
-                        </div>
-                        <h5 class="fw-bold">Basis Pengetahuan</h5>
-                        <p class="mb-0">Sistem dilengkapi dengan database gejala dan penyakit ayam yang komprehensif.</p>
-                    </div>
+        <div class="card-body text-center">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h5 class="mb-2"><i class="fas fa-question-circle me-2"></i>Butuh informasi lebih lanjut tentang sistem?</h5>
+                    <p class="text-muted mb-0">Pelajari cara kerja sistem diagnosis dan teknologi yang digunakan.</p>
                 </div>
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="info-card text-center p-4 rounded-4 shadow-sm" style="background: linear-gradient(120deg, #e0faeb, #d7f9e9);">
-                        <div class="info-icon mb-3 mx-auto">
-                            <i class="fas fa-brain fa-3x" style="color: #34c759;"></i>
-                        </div>
-                        <h5 class="fw-bold">Forward Chaining</h5>
-                        <p class="mb-0">Menggunakan metode inferensi untuk mendiagnosis penyakit berdasarkan gejala.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="info-card text-center p-4 rounded-4 shadow-sm" style="background: linear-gradient(120deg, #fff8e6, #fff5d6);">
-                        <div class="info-icon mb-3 mx-auto">
-                            <i class="fas fa-heartbeat fa-3x" style="color: #ff9500;"></i>
-                        </div>
-                        <h5 class="fw-bold">Solusi Penanganan</h5>
-                        <p class="mb-0">Memberikan rekomendasi penanganan untuk setiap penyakit yang terdiagnosis.</p>
-                    </div>
+                <div class="col-md-4">
+                    <a href="{{ route('informasi.sistem') }}" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-info-circle me-2"></i>Informasi Sistem
+                    </a>
                 </div>
             </div>
         </div>
@@ -126,26 +105,7 @@
         border-color: var(--primary-color);
     }
     
-    .info-card {
-        transition: all 0.3s ease;
-        border: 1px solid rgba(0,0,0,0.05);
-    }
-    
-    .info-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-    }
-    
-    .info-icon {
-        width: 80px;
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: rgba(255,255,255,0.8);
-        border-radius: 50%;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-    }
+
     
     @keyframes pulse {
         0% { transform: scale(1); opacity: 1; }
@@ -158,19 +118,6 @@
     }
 
     @media (max-width: 576px) {
-        .info-icon {
-            width: 60px;
-            height: 60px;
-        }
-        
-        .info-icon i {
-            font-size: 2em !important;
-        }
-        
-        .info-card {
-            padding: 15px !important;
-        }
-        
         .gejala-card {
             padding: 10px !important;
         }
@@ -181,4 +128,4 @@
         }
     }
 </style>
-@endsection 
+@endsection

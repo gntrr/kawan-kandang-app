@@ -170,4 +170,9 @@ class DiagnosisController extends Controller
         
         return view('diagnosis.detail-riwayat', compact('riwayat', 'gejalas'));
     }
+    
+    public function informasiSistem()
+    {
+        return view('diagnosis.informasi-sistem');
+    }
 }
