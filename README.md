@@ -65,8 +65,8 @@ KawanKandang adalah aplikasi Sistem Pendukung Keputusan (SPK) berbasis web yang 
 - Windows / Linux / macOS
 
 ### Software
-- PHP 8.0 atau lebih tinggi
-- MySQL 5.7 atau lebih tinggi
+- PHP 8.2 atau lebih tinggi
+- PostgreSQL 12 atau lebih tinggi
 - Composer (dependency manager untuk PHP)
 - Web server (Apache/Nginx)
 
@@ -78,6 +78,7 @@ KawanKandang adalah aplikasi Sistem Pendukung Keputusan (SPK) berbasis web yang 
 - Mbstring
 - OpenSSL
 - PDO
+- PDO_PGSQL (untuk PostgreSQL)
 - Tokenizer
 - XML
 
@@ -89,15 +90,20 @@ KawanKandang adalah aplikasi Sistem Pendukung Keputusan (SPK) berbasis web yang 
 - Ekstrak source code ke direktori web server Anda
 
 ### 2. Konfigurasi Database
-1. Buka file `.env.example` dan simpan salinannya sebagai `.env`
-2. Edit file `.env` dan sesuaikan parameter database:
+1. Pastikan PostgreSQL sudah terinstall dan berjalan
+2. Buat database baru untuk aplikasi:
+   ```sql
+   CREATE DATABASE kawankandang_db;
    ```
-   DB_CONNECTION=mysql
+3. Buka file `.env.example` dan simpan salinannya sebagai `.env`
+4. Edit file `.env` dan sesuaikan parameter database:
+   ```
+   DB_CONNECTION=pgsql
    DB_HOST=127.0.0.1
-   DB_PORT=3306
-   DB_DATABASE=nama_database
-   DB_USERNAME=username_database
-   DB_PASSWORD=password_database
+   DB_PORT=5432
+   DB_DATABASE=kawankandang_db
+   DB_USERNAME=postgres
+   DB_PASSWORD=password_anda
    ```
 
 ### 3. Instalasi Dependensi
@@ -147,10 +153,12 @@ php artisan storage:link
 ## Teknologi yang Digunakan
 - **Framework**: Laravel 11
 - **Frontend**: Bootstrap 5, Font Awesome, Google Fonts (Poppins)
-- **Database**: MySQL
+- **Database**: PostgreSQL 12+
+- **ORM**: Eloquent ORM (Laravel)
 - **Authentication**: Laravel Auth dengan multi-guard (Admin & User)
 - **Styling**: CSS3 dengan custom variables dan responsive design
 - **JavaScript**: Vanilla JS untuk interaktivitas
+- **Migration**: Laravel Schema Builder (kompatibel dengan PostgreSQL)
 
 ## Fitur Keamanan
 - Autentikasi terpisah untuk Admin dan User
