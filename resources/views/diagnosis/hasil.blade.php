@@ -39,7 +39,7 @@
                                     <div class="row">
                                         @foreach($relevantRuleMatching as $kode => $data)
                                             <div class="col-md-6 mb-3">
-                                                <div class="rule-card border rounded-4 p-3 shadow-sm h-100" style="border-left: 5px solid #ff9500 !important; background-color: rgba(255, 149, 0, 0.05);">
+                                                <div class="rule-card border rounded p-3 h-100" style="border-left: 3px solid var(--warning-color); background-color: var(--bg-secondary);">
                                                     <h6 class="border-bottom pb-2 d-flex justify-content-between align-items-center flex-wrap">
                                                         <span class="me-2">{{ $kode }}</span>
                                                         <span class="badge bg-warning text-dark">
@@ -129,7 +129,7 @@
                                         <h5 class="text-success mb-3">{{ $hasilPenyakit->nama_penyakit }} ({{ $hasilPenyakit->kode_penyakit }})</h5>
                                         <div class="d-flex align-items-center mb-3">
                                             <div class="confidence-meter me-3">
-                                                <div class="confidence-level" style="width: 100%; background: linear-gradient(to right, #36b4ff, #34c759);"></div>
+                                                <div class="confidence-level" style="width: 100%; background-color: var(--success-color);"></div>
                                             </div>
                                             <span class="confidence-text text-success">100% Confidence</span>
                                         </div>
@@ -137,7 +137,7 @@
                                     </div>
                                     <div class="col-md-5 col-sm-12 text-center">
                                         <div class="diagnosis-image mb-2">
-                                            <i class="fas fa-viruses fa-5x text-success pulse-animation"></i>
+                                            <i class="fas fa-viruses fa-4x text-success"></i>
                                         </div>
                                         <div class="badge bg-success p-2">
                                             {{ $bestMatch->kode_rule }}
@@ -157,7 +157,7 @@
                                     <div class="row">
                                         @foreach($relevantRuleMatching as $kode => $data)
                                             <div class="col-md-6 mb-3">
-                                                <div class="rule-card border rounded-4 p-3 shadow-sm h-100" style="border-left: 5px solid {{ $data['percentage'] == 100 ? '#34c759' : '#ff9500' }} !important; background-color: {{ $data['percentage'] == 100 ? 'rgba(52, 199, 89, 0.05)' : 'rgba(255, 149, 0, 0.05)' }};">
+                                                <div class="rule-card border rounded p-3 h-100" style="border-left: 3px solid {{ $data['percentage'] == 100 ? 'var(--success-color)' : 'var(--warning-color)' }}; background-color: var(--bg-secondary);">
                                                     <h6 class="border-bottom pb-2 d-flex justify-content-between align-items-center flex-wrap">
                                                         <span class="me-2">{{ $kode }}</span>
                                                         <span class="badge bg-{{ $data['percentage'] == 100 ? 'success' : 'warning' }}">
@@ -220,9 +220,9 @@
                             <div class="row">
                                 @foreach($selectedGejalas as $gejala)
                                     <div class="col-md-6 col-sm-12 mb-2">
-                                        <div class="selected-gejala p-2 rounded-3 border">
+                                        <div class="selected-gejala p-3 rounded border">
                                             <i class="fas fa-check-circle text-success me-2"></i>
-                                            <strong>{{ $gejala->kode_gejala }}</strong> - {{ $gejala->nama_gejala }}
+                                            <span class="fw-semibold text-primary">{{ $gejala->kode_gejala }}</span> - {{ $gejala->nama_gejala }}
                                         </div>
                                     </div>
                                 @endforeach
@@ -234,8 +234,8 @@
                 {{-- Sidebar --}}
                 <div class="col-lg-4 col-md-12">
                     <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-header bg-secondary text-white">
-                            <h5 class="mb-0"><i class="fas fa-cogs me-2"></i>Proses Diagnosis</h5>
+                        <div class="card-header bg-secondary">
+                            <h5 class="mb-0 text-white"><i class="fas fa-cogs me-2 text-white"></i>Proses Diagnosis</h5>
                         </div>
                         <div class="card-body">
                             <div class="process-step p-3 mb-3 rounded bg-light">
@@ -299,77 +299,64 @@
     </div>
 </div>
 
-{{-- Existing styles --}}
+{{-- Clean Minimalist Styles --}}
 <style>
     .confidence-meter {
         width: 70%;
-        height: 20px;
-        background-color: #e9ecef;
-        border-radius: 10px;
+        height: 16px;
+        background-color: var(--border-color);
+        border-radius: var(--radius-sm);
         overflow: hidden;
     }
     
     .confidence-level {
         height: 100%;
-        border-radius: 10px;
+        border-radius: var(--radius-sm);
     }
     
     .confidence-text {
-        font-weight: bold;
-        color: #0091ff;
+        font-weight: 600;
+        color: var(--success-color);
     }
     
     .selected-gejala {
-        background-color: rgba(52, 199, 89, 0.1);
-        border-color: rgba(52, 199, 89, 0.3) !important;
-        transition: all 0.3s ease;
+        background-color: var(--bg-secondary);
+        border-color: var(--success-color) !important;
+        transition: all 0.15s ease;
     }
     
     .selected-gejala:hover {
-        transform: translateX(5px);
-        background-color: rgba(52, 199, 89, 0.15);
+        background-color: rgba(34, 197, 94, 0.05);
     }
     
     .process-step {
-        transition: all 0.3s ease;
-        border-left: 4px solid #5856d6;
+        transition: all 0.15s ease;
+        border-left: 3px solid var(--primary-color);
+        background-color: var(--bg-secondary) !important;
     }
     
     .process-step:hover {
-        transform: translateX(5px);
-        background-color: #f8f9fa !important;
+        background-color: var(--bg-primary) !important;
     }
     
     .rule-card {
-        transition: all 0.3s ease;
+        transition: all 0.15s ease;
     }
     
     .rule-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+        border-color: var(--primary-color);
     }
     
     .suggestion-item {
-        transition: all 0.3s ease;
+        transition: all 0.15s ease;
     }
     
     .suggestion-item:hover {
-        transform: translateX(5px);
-        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        background-color: var(--bg-primary) !important;
     }
     
     .missing-symptoms {
-        border-left: 3px solid #dc3545;
-    }
-    
-    @keyframes pulse {
-        0% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.1); opacity: 0.8; }
-        100% { transform: scale(1); opacity: 1; }
-    }
-    
-    .pulse-animation {
-        animation: pulse 2s infinite;
+        border-left: 3px solid var(--danger-color);
     }
 
     @media (max-width: 768px) {

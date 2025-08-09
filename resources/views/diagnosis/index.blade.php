@@ -34,7 +34,7 @@
                 
                 <h5 class="border-bottom pb-2 mb-3 text-primary fw-bold">
                     <div class="d-flex align-items-center">
-                        <span class="badge bg-primary me-2 animate-pulse"><i class="fas fa-list"></i></span>
+                        <span class="section-badge me-2"><i class="fas fa-list"></i></span>
                         Daftar Gejala
                     </div>
                 </h5>
@@ -42,17 +42,49 @@
                 <div class="row">
                     @foreach($gejalas as $gejala)
                         <div class="col-md-6 col-sm-12 mb-3">
-                            <div class="gejala-card form-check custom-checkbox p-3 rounded-3 border shadow-sm" 
-                                style="border-left: 5px solid {{ $loop->iteration % 6 == 0 ? '#ff375f' : ($loop->iteration % 6 == 1 ? '#0091ff' : ($loop->iteration % 6 == 2 ? '#34c759' : ($loop->iteration % 6 == 3 ? '#ff9500' : ($loop->iteration % 6 == 4 ? '#5856d6' : '#5ac8fa')))) }} !important;">
-                                <input class="form-check-input" type="checkbox" value="{{ $gejala->id_gejala }}" 
+                            <div class="gejala-card p-4 rounded border" onclick="toggleCheckbox('gejala_{{ $gejala->id_gejala }}')">
+                                <input class="form-check-input visually-hidden" type="checkbox" value="{{ $gejala->id_gejala }}" 
                                     id="gejala_{{ $gejala->id_gejala }}" name="gejala_ids[]">
-                                <label class="form-check-label w-100 ms-2" for="gejala_{{ $gejala->id_gejala }}">
-                                    <strong class="text-dark">{{ $gejala->kode_gejala }}</strong> - {{ $gejala->nama_gejala }}
-                                </label>
+                                <div class="d-flex align-items-start">
+                                    <div class="symptom-icon me-3">
+                                        <i class="fas fa-square-o check-icon"></i>
+                                        <i class="fas fa-check-square check-icon-checked"></i>
+                                    </div>
+                                    <div>
+                                        <span class="symptom-code">{{ $gejala->kode_gejala }}</span>
+                                        <div class="symptom-name">{{ $gejala->nama_gejala }}</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
+
+                <script>
+                    function toggleCheckbox(id) {
+                        const checkbox = document.getElementById(id);
+                        checkbox.checked = !checkbox.checked;
+                        
+                        // Trigger change event for any listeners
+                        const event = new Event('change');
+                        checkbox.dispatchEvent(event);
+                    }
+                </script>
+
+                <style>
+                    .check-icon-checked {
+                        display: none;
+                        color: var(--primary-color);
+                    }
+
+                    .gejala-card:has(.form-check-input:checked) .check-icon {
+                        display: none;
+                    }
+
+                    .gejala-card:has(.form-check-input:checked) .check-icon-checked {
+                        display: inline-block;
+                    }
+                </style>
                 
                 <div class="d-grid gap-2 mt-4">
                     <button type="submit" class="btn btn-primary btn-lg">
@@ -81,50 +113,106 @@
 </div>
 
 <style>
-    .form-check-input:checked + .form-check-label {
-        font-weight: bold;
-    }
-    
+    /* Clean Minimalist Diagnosis Styles */
     .gejala-card {
-        background-color: white;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(0,0,0,0.05);
+        background-color: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        transition: all 0.15s ease;
+        cursor: pointer;
+        position: relative;
     }
     
     .gejala-card:hover {
-        transform: translateX(5px) translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.08) !important;
-    }
-    
-    .gejala-card .form-check-input:checked ~ label {
-        font-weight: bold;
+        border-color: var(--primary-color);
+        background-color: var(--bg-secondary);
     }
     
     .gejala-card:has(.form-check-input:checked) {
-        background-color: rgba(0,145,255,0.05);
+        background-color: rgba(59, 130, 246, 0.03);
         border-color: var(--primary-color);
+        border-width: 2px;
     }
     
-
-    
-    @keyframes pulse {
-        0% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.05); opacity: 0.8; }
-        100% { transform: scale(1); opacity: 1; }
+    .symptom-icon {
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+        margin-top: 2px;
     }
     
-    .animate-pulse {
-        animation: pulse 2s infinite;
+    .gejala-card:has(.form-check-input:checked) .symptom-icon {
+        color: var(--primary-color);
     }
-
-    @media (max-width: 576px) {
+    
+    .symptom-code {
+        font-weight: 600;
+        color: var(--primary-color);
+        font-size: 0.875rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .symptom-name {
+        color: var(--text-primary);
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-top: 2px;
+    }
+    
+    .gejala-card:has(.form-check-input:checked) .symptom-name {
+        font-weight: 500;
+    }
+    
+    /* Clean checkbox styling */
+    .form-check-input {
+        width: 1.125rem;
+        height: 1.125rem;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        background-color: var(--bg-primary);
+        margin-top: 0.125rem;
+    }
+    
+    .form-check-input:checked {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+    }
+    
+    .form-check-input:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.08);
+        outline: none;
+    }
+    
+    .form-check-input:hover:not(:checked) {
+        border-color: var(--primary-light);
+    }
+    
+    /* Section badge styling */
+    .section-badge {
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: var(--radius-sm);
+        padding: 0.375rem 0.5rem;
+        font-weight: 500;
+        font-size: 0.875rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
         .gejala-card {
-            padding: 10px !important;
+            padding: 1rem !important;
         }
         
-        .btn-lg {
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
+        .symptom-icon {
+            display: none;
+        }
+        
+        .form-check-label {
+            margin-left: 0.5rem !important;
         }
     }
 </style>
