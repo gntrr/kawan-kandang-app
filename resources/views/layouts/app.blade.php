@@ -27,6 +27,7 @@
             --accent-color: #f59e0b;
             --success-color: #10b981;
             --warning-color: #f59e0b;
+            --danger-color: #ef4444;
             --error-color: #ef4444;
             --info-color: #3b82f6;
             
