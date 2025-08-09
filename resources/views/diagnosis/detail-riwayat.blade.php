@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
     <div class="card shadow">
-        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-            <h4 class="mb-0">Detail Diagnosis</h4>
+        <div class="card-header bg-primary d-flex justify-content-between align-items-center">
+            <h4 class="mb-0 text-white">Detail Diagnosis</h4>
             <a href="{{ route('diagnosis.riwayat') }}" class="btn btn-sm btn-light">
                 <i class="fas fa-arrow-left me-1"></i> Kembali
             </a>

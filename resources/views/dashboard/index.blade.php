@@ -65,8 +65,8 @@
     <div class="row mt-4">
         <div class="col-md-12">
             <div class="card shadow">
-                <div class="card-header bg-dark text-white">
-                    <h5 class="mb-0">Riwayat Diagnosis Terbaru</h5>
+                <div class="card-header bg-dark">
+                    <h5 class="mb-0 text-white">Riwayat Diagnosis Terbaru</h5>
                 </div>
                 <div class="card-body">
                     @if($recentDiagnoses->count() > 0)

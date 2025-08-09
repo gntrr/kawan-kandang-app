@@ -120,8 +120,8 @@
                         
                         {{-- Hasil diagnosis yang sudah ada --}}
                         <div class="card mb-4 border-0 shadow-sm">
-                            <div class="card-header bg-success text-white">
-                                <h5 class="mb-0"><i class="fas fa-virus me-2"></i>Penyakit Terdiagnosis</h5>
+                            <div class="card-header bg-success">
+                                <h5 class="mb-0 text-white"><i class="fas fa-virus me-2"></i>Penyakit Terdiagnosis</h5>
                             </div>
                             <div class="card-body">
                                 <div class="row align-items-center">
@@ -191,8 +191,8 @@
                         
                         {{-- Solusi penanganan --}}
                         <div class="card mb-4 border-0 shadow-sm">
-                            <div class="card-header bg-success text-white">
-                                <h5 class="mb-0"><i class="fas fa-medkit me-2"></i>Solusi Penanganan</h5>
+                            <div class="card-header bg-success">
+                                <h5 class="mb-0 text-white"><i class="fas fa-medkit me-2"></i>Solusi Penanganan</h5>
                             </div>
                             <div class="card-body">
                                 <p class="mb-3">{{ $hasilPenyakit->solusi }}</p>

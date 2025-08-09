@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
     <div class="card shadow">
-        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-            <h4 class="mb-0">Manajemen Rule</h4>
+        <div class="card-header bg-primary d-flex justify-content-between align-items-center">
+            <h4 class="mb-0 text-white">Manajemen Rule</h4>
             <a href="{{ route('rule.create') }}" class="btn btn-sm btn-light">
                 <i class="fas fa-plus me-1"></i> Tambah Rule
             </a>

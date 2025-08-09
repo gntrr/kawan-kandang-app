@@ -92,7 +92,7 @@
         
         /* Typography */
         h1, h2, h3, h4, h5, h6 {
-            font-weight: 600;
+            font-weight: 500;
             letter-spacing: -0.025em;
             color: var(--text-primary);
             margin-bottom: var(--spacing-md);
@@ -648,7 +648,7 @@
                     <i class="fas fa-times"></i>
                 </button>
                 <div class="p-3">
-                    <h4 class="mb-4">Menu Admin</h4>
+                    <h4 class="mb-4">Menu Utama</h4>
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
@@ -681,7 +681,7 @@
                             </a>
                         </li>
                         <li class="nav-item mt-4">
-                            <a class="nav-link bg-danger" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <a class="nav-link bg-danger text-white" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="fas fa-sign-out-alt me-2"></i> Logout
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
