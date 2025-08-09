@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KawanKandang - Sistem Pendukung Keputusan untuk deteksi dini penyakit pada ayam broiler. Diagnosis akurat dengan algoritma forward chaining untuk kesehatan ternak yang optimal.">
+    <meta name="keywords" content="KawanKandang, diagnosis penyakit ayam, ayam broiler, sistem pakar, forward chaining, kesehatan ternak">
+    <meta name="author" content="KawanKandang Team">
     <title>{{ config('app.name', 'KawanKandang') }}</title>
     
     <!-- Bootstrap CSS -->
@@ -698,4 +701,4 @@
         });
     </script>
 </body>
-</html> 
+</html>

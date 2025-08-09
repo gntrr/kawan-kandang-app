@@ -1,4 +1,7 @@
 {
+    "name": "kawankandang-app",
+    "description": "KawanKandang - Sistem Pendukung Keputusan untuk deteksi dini penyakit pada ayam broiler",
+    "version": "1.0.0",
     "private": true,
     "type": "module",
     "scripts": {

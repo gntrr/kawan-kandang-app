@@ -1,8 +1,8 @@
 
-# Sistem Deteksi Dini Penyakit Pada Ayam Broiler
+# KawanKandang - Sistem Deteksi Dini Penyakit Pada Ayam Broiler
 
 ## Deskripsi
-Sistem Pendukung Keputusan (SPK) Deteksi Dini Penyakit Pada Ayam Broiler adalah aplikasi berbasis web yang dirancang untuk membantu peternak dalam mendiagnosis penyakit pada ayam broiler berdasarkan gejala-gejala yang diamati. Dengan pendekatan algoritma forward chaining, sistem ini memberikan hasil diagnosis yang akurat dan rekomendasi penanganan yang tepat.
+KawanKandang adalah aplikasi Sistem Pendukung Keputusan (SPK) berbasis web yang dirancang khusus untuk membantu peternak dalam mendiagnosis penyakit pada ayam broiler berdasarkan gejala-gejala yang diamati. Dengan menggunakan pendekatan algoritma forward chaining, KawanKandang memberikan hasil diagnosis yang akurat dan rekomendasi penanganan yang tepat untuk menjaga kesehatan ternak ayam broiler Anda.
 
 ## Fitur Utama
 
@@ -144,5 +144,20 @@ php artisan storage:link
   - Password: password
 - Segera ubah password setelah login pertama
 
+## Teknologi yang Digunakan
+- **Framework**: Laravel 11
+- **Frontend**: Bootstrap 5, Font Awesome, Google Fonts (Poppins)
+- **Database**: MySQL
+- **Authentication**: Laravel Auth dengan multi-guard (Admin & User)
+- **Styling**: CSS3 dengan custom variables dan responsive design
+- **JavaScript**: Vanilla JS untuk interaktivitas
+
+## Fitur Keamanan
+- Autentikasi terpisah untuk Admin dan User
+- Middleware protection untuk route admin
+- CSRF protection pada semua form
+- Password hashing dengan bcrypt
+- Session management yang aman
+
 ## Kesimpulan
-SPK Deteksi Dini Penyakit Pada Ayam Broiler menyediakan solusi komprehensif untuk membantu peternak mengidentifikasi penyakit pada ayam broiler secara dini. Dengan antarmuka yang responsif dan sistem aturan yang dapat disesuaikan, aplikasi ini dapat menjadi alat yang berharga dalam pengelolaan kesehatan ayam broiler.
+KawanKandang menyediakan solusi komprehensif dan modern untuk membantu peternak mengidentifikasi penyakit pada ayam broiler secara dini. Dengan antarmuka yang responsif, sistem aturan yang dapat disesuaikan, dan teknologi web terkini, aplikasi ini dapat menjadi mitra terpercaya dalam pengelolaan kesehatan ayam broiler Anda.

@@ -1,9 +1,9 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "kawankandang/kawankandang-app",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "KawanKandang - Sistem Pendukung Keputusan untuk deteksi dini penyakit pada ayam broiler menggunakan algoritma forward chaining.",
+    "keywords": ["kawankandang", "diagnosis", "ayam-broiler", "sistem-pakar", "forward-chaining", "laravel"],
     "license": "MIT",
     "require": {
         "php": "^8.2",
